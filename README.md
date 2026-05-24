@@ -2,13 +2,7 @@
 
 <div align="center">
 
-```text
-   __    _  ____  _  _  ____  ____     ___  __     __    ____  ____ 
-  (  )  ( )(  _ \( )( )( _  )(  _ \   / __)(  )   (  )  / ___)/ ___)
-  / (_/\ )()(  _/ )()(  / /_  )(_) ) ( (_ \/ (_/\ / (_/\\___ \\___ \
-  \____/(__)(__)  \____/____)(____/   \___/\____/ \____/(____/(____/
-```
-
+# 💎 LIQUID GLASS PORTFOLIO 💎
 ### 🔮 A Cinematic, High-Performance 3D Glassmorphic Interface
 
 [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
@@ -28,9 +22,9 @@ Unlike generic flat designs, the **Liquid Glass** theme simulates physical light
 
 ```mermaid
 graph TD
-    classDef glass fill:rgba(255,255,255,0.06),stroke:rgba(255,255,255,0.3),stroke-width:2px,color:#fff;
-    classDef highlight fill:#fff,stroke:#38B2AC,stroke-width:1px,color:#000;
-    classDef anim fill:rgba(241,7,163,0.1),stroke:#F107A3,stroke-width:1px,color:#fff;
+    classDef glass fill:#18181b,stroke:#ffffff,stroke-width:2px,color:#ffffff;
+    classDef highlight fill:#ffffff,stroke:#38B2AC,stroke-width:1px,color:#000000;
+    classDef anim fill:#1f0015,stroke:#F107A3,stroke-width:1px,color:#ffffff;
 
     A["✨ Specular Top Light <br> 'inset 0 1px 0 rgba(255,255,255,0.35)'"]:::highlight --> B["🧬 Frosted Glass Core <br> 'backdrop-blur-3xl / rgba(255,255,255,0.06)'"]:::glass
     B --> C["🌈 Directional Border Gradient <br> 'bright white top / faint bottom'"]:::glass
