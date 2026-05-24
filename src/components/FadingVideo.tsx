@@ -72,7 +72,7 @@ export default function FadingVideo({
         setIsInView(entry.isIntersecting);
       },
       {
-        rootMargin: '800px', // Pre-trigger playback before element enters viewport
+        rootMargin: '150px', // Strict margin to ensure off-screen videos pause immediately to save GPU threads
         threshold: 0,
       }
     );

@@ -873,7 +873,6 @@ export default function App() {
           src={import.meta.env.VITE_PROJECTS_VIDEO_URL}
           className="z-0"
           style={{ 
-            filter: "saturate(2.0) brightness(1.2) contrast(1.15)", 
             objectPosition: "center 94%", 
             transform: "scale(1.15)"
           }}
