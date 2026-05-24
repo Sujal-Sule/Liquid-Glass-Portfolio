@@ -5,15 +5,16 @@ interface BlurTextProps {
   text: string;
   className?: string;
   delayOffset?: number;
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
 }
 
-export default function BlurText({ text, className, delayOffset = 0 }: BlurTextProps) {
+export default function BlurText({ text, className, delayOffset = 0, as: Tag = 'h1' }: BlurTextProps) {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
   const words = text.split(' ');
 
   return (
-    <p
+    <Tag
       ref={containerRef}
       className={`flex flex-wrap justify-center overflow-visible ${className}`}
       style={{ rowGap: '0.1em' }}
@@ -39,6 +40,6 @@ export default function BlurText({ text, className, delayOffset = 0 }: BlurTextP
           {word}
         </motion.span>
       ))}
-    </p>
+    </Tag>
   );
 }
