@@ -900,7 +900,7 @@ export default function App() {
                     <motion.img 
                       src={project.image} 
                       alt={project.title} 
-                      loading="lazy"
+                      loading="eager"
                       decoding="async"
                       className="absolute inset-0 w-full h-full object-cover"
                       whileHover={{ scale: 1.1, rotate: 1 }}

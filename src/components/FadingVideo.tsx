@@ -79,8 +79,8 @@ export default function FadingVideo({
         }
       },
       {
-        rootMargin: '450px', // load ahead of scroll
-        threshold: 0.01,
+        rootMargin: '600px', // Load well ahead of scrolling to guarantee smooth background transitions
+        threshold: 0, // Triggers instantly even on collapsed/0x0 dimensions on mount
       }
     );
 
@@ -96,7 +96,7 @@ export default function FadingVideo({
     if (videoRef.current) {
       videoRef.current.style.opacity = '0';
     }
-  }, [src]);
+  }, [src, hasLoaded]);
 
   // Control video play/pause and opacity fade-in
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function FadingVideo({
       }
       video.removeEventListener('playing', handlePlaying);
     };
-  }, [hasLoaded, isInView, maxOpacity]);
+  }, [hasLoaded, isInView, maxOpacity, src]);
 
   return (
     <div
@@ -144,25 +144,23 @@ export default function FadingVideo({
         zIndex: 0,
       }}
     >
-      {hasLoaded && (
-        <video
-          ref={videoRef}
-          src={src}
-          style={{
-            opacity: 0,
-            position: 'absolute',
-            inset: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            ...style, // Spreads video-specific styling (filter, objectPosition, scale) directly to video element
-          }}
-          muted
-          playsInline
-          loop
-          preload="auto"
-        />
-      )}
+      <video
+        ref={videoRef}
+        src={hasLoaded ? src : undefined} // Always mounts node to avoid React mounting race-conditions, sets src dynamically
+        style={{
+          opacity: 0,
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          ...style,
+        }}
+        muted
+        playsInline
+        loop
+        preload="auto"
+      />
 
       {/* Top edge fade: black → transparent */}
       {fadeTop > 0 && (
