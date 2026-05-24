@@ -1,0 +1,26 @@
+# Sujal Sule
+
+> Full-Stack Software Engineer & Creative Developer specializing in high-performance web systems and high-fidelity cinematic UI.
+
+## Profile Summary
+Sujal Sule is a creative software engineer building modern, interactive, and highly scalable digital systems. With deep expertise in frontend architectures (React, Framer Motion, React Three Fiber, WebGL) and full-stack development (TypeScript, Node.js, FastAPI, PostgreSQL), Sujal designs highly functional platforms that combine state-of-the-art aesthetics with technical robustness.
+
+## Primary Domain
+- [Website](https://sujalsule.in/)
+
+## Social Profiles
+- [GitHub](https://github.com/Sujal-Sule)
+- [LinkedIn](https://linkedin.com/in/sujal-sule)
+
+## Technical Stack
+- **Languages:** JavaScript, TypeScript, Python, HTML5, CSS3, SQL
+- **Frontend Ecosystem:** React, Next.js, Vite, Tailwind CSS, Framer Motion, React Three Fiber, Three.js
+- **Backend & Cloud:** Node.js, Express, FastAPI, PostgreSQL, MongoDB, Vercel, Hostinger, Git
+
+## Core Projects
+- **SkillSwap:** Subdomain: [skillswap.sujalsule.in](https://skillswap.sujalsule.in/). A modern collaborative platform for skill assessment and direct knowledge sharing.
+- **Arogya AI:** High-performance diagnosis platform utilizing AI endpoints and robust server-side schemas.
+- **Origyn:** Decentralized web3 authentication and provenance system interface.
+
+## Contact Information
+- **Email:** sujalsule31@gmail.com
