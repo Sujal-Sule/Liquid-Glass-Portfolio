@@ -25,7 +25,6 @@ export default function FadingVideo({
   const containerRef = useRef<HTMLDivElement>(null);
   const fadeRequestId = useRef<number | null>(null);
   
-  const [hasLoaded, setHasLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const hasFadedIn = useRef(false);
 
@@ -58,29 +57,23 @@ export default function FadingVideo({
     fadeRequestId.current = requestAnimationFrame(animate);
   };
 
-  // Intersection Observer to lazy load and pause when off-screen
+  // Intersection Observer to safely pause playback when off-screen for CPU/GPU efficiency
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
-      setHasLoaded(true);
       setIsInView(true);
       return;
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasLoaded(true);
-          setIsInView(true);
-        } else {
-          setIsInView(false);
-        }
+        setIsInView(entry.isIntersecting);
       },
       {
-        rootMargin: '600px', // Load well ahead of scrolling to guarantee smooth background transitions
-        threshold: 0, // Triggers instantly even on collapsed/0x0 dimensions on mount
+        rootMargin: '800px', // Pre-trigger playback before element enters viewport
+        threshold: 0,
       }
     );
 
@@ -96,12 +89,12 @@ export default function FadingVideo({
     if (videoRef.current) {
       videoRef.current.style.opacity = '0';
     }
-  }, [src, hasLoaded]);
+  }, [src]);
 
   // Control video play/pause and opacity fade-in
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !hasLoaded) return;
+    if (!video) return;
 
     const handlePlaying = () => {
       if (!hasFadedIn.current) {
@@ -128,7 +121,7 @@ export default function FadingVideo({
       }
       video.removeEventListener('playing', handlePlaying);
     };
-  }, [hasLoaded, isInView, maxOpacity, src]);
+  }, [isInView, maxOpacity, src]);
 
   return (
     <div
@@ -146,7 +139,7 @@ export default function FadingVideo({
     >
       <video
         ref={videoRef}
-        src={hasLoaded ? src : undefined} // Always mounts node to avoid React mounting race-conditions, sets src dynamically
+        src={src} // Eagerly loads all background videos on page mount
         style={{
           opacity: 0,
           position: 'absolute',
@@ -156,6 +149,7 @@ export default function FadingVideo({
           objectFit: 'cover',
           ...style,
         }}
+        autoPlay
         muted
         playsInline
         loop
