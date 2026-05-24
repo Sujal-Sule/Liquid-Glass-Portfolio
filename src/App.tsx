@@ -912,6 +912,7 @@ export default function App() {
                     href={project.live || project.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    aria-label={`View live website or source code for ${project.title}`}
                     className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20"
                   >
                     <div className="w-16 h-16 liquid-glass rounded-full flex items-center justify-center backdrop-blur-xl hover:scale-110 active:scale-95 transition-transform">
@@ -1179,6 +1180,8 @@ export default function App() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <input 
                 type="text" 
+                id="contact-name"
+                aria-label="Your Name"
                 placeholder="Name" 
                 required
                 value={formData.name}
@@ -1187,6 +1190,8 @@ export default function App() {
               />
               <input 
                 type="email" 
+                id="contact-email"
+                aria-label="Your Email Address"
                 placeholder="Email" 
                 required
                 value={formData.email}
@@ -1194,6 +1199,8 @@ export default function App() {
                 className="w-full liquid-glass rounded-2xl px-6 py-4 text-white placeholder-white/40 font-body focus:outline-none focus:bg-white/[0.03] transition-all bg-transparent border border-transparent focus:border-white/10"
               />
               <textarea 
+                id="contact-message"
+                aria-label="Your Message"
                 placeholder="Your Message..." 
                 rows={5}
                 required
