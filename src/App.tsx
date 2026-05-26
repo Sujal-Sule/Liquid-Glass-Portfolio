@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Preloader from './components/Preloader';
 import ScrollProgress from './components/ScrollProgress';
 import Navbar from './sections/Navbar';
@@ -37,6 +38,9 @@ export default function App() {
     <main className="bg-black text-white selection:bg-white/20" role="main">
       {/* SEO: Screen-reader-only h1 for proper heading hierarchy */}
       <h1 className="sr-only">Sujal Sule — MERN Stack Developer, Full-Stack Engineer & Hackathon Builder from India</h1>
+
+      {/* Vercel Speed Insights */}
+      <SpeedInsights />
 
       {/* Preloader */}
       <Preloader onComplete={handlePreloaderComplete} />
