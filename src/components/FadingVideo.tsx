@@ -5,10 +5,12 @@ interface FadingVideoProps {
   className?: string;
   style?: CSSProperties;
   maxOpacity?: number;
-  /** Percentage of the container height to fade at the top edge (0-50). Default 0 (no fade). */
   fadeTop?: number;
-  /** Percentage of the container height to fade at the bottom edge (0-50). Default 0 (no fade). */
   fadeBottom?: number;
+  /** Controls video preloading. Use 'metadata' for above-fold, 'none' for below-fold. Default: 'none' */
+  preload?: 'none' | 'metadata' | 'auto';
+  /** Hint browser this is high priority (above-fold hero). Default: false */
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const FADE_MS = 1000;
@@ -20,6 +22,8 @@ export default function FadingVideo({
   maxOpacity = 1,
   fadeTop = 0,
   fadeBottom = 0,
+  preload = 'none',
+  fetchPriority = 'auto',
 }: FadingVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -139,7 +143,7 @@ export default function FadingVideo({
     >
       <video
         ref={videoRef}
-        src={src} // Eagerly loads all background videos on page mount
+        src={src}
         style={{
           opacity: 0,
           position: 'absolute',
@@ -153,7 +157,8 @@ export default function FadingVideo({
         muted
         playsInline
         loop
-        preload="auto"
+        preload={preload}
+        fetchPriority={fetchPriority}
       />
 
       {/* Top edge fade: black → transparent */}

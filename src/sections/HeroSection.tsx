@@ -18,6 +18,8 @@ export default function HeroSection() {
         style={{ objectPosition: 'center top' }}
         maxOpacity={0.4}
         fadeBottom={22}
+        preload="metadata"
+        fetchPriority="high"
       />
 
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4">
