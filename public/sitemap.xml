@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <!-- Primary Landing Page -->
   <url>
     <loc>https://sujalsule.in/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sujalsule.in/android-chrome-512x512.png</image:loc>
+      <image:title>Sujal Sule — MERN Stack Developer Portfolio</image:title>
+    </image:image>
   </url>
 
   <!-- Portfolio / Hero Section -->
   <url>
     <loc>https://sujalsule.in/#portfolio</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -22,7 +27,7 @@
   <!-- Expertise Section -->
   <url>
     <loc>https://sujalsule.in/#expertise</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -30,7 +35,7 @@
   <!-- About Section -->
   <url>
     <loc>https://sujalsule.in/#about</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -38,7 +43,7 @@
   <!-- Tech Stack Section -->
   <url>
     <loc>https://sujalsule.in/#stack</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -46,7 +51,7 @@
   <!-- Featured Projects Section -->
   <url>
     <loc>https://sujalsule.in/#archives</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -54,7 +59,7 @@
   <!-- Hackathons Section -->
   <url>
     <loc>https://sujalsule.in/#hackathons</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,8 +67,58 @@
   <!-- Contact Section -->
   <url>
     <loc>https://sujalsule.in/#contact</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- ===== Dedicated Project Pages ===== -->
+
+  <!-- SkillSwap Platform -->
+  <url>
+    <loc>https://sujalsule.in/projects/skillswap</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- SafePulse -->
+  <url>
+    <loc>https://sujalsule.in/projects/safepulse</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- EchoBook -->
+  <url>
+    <loc>https://sujalsule.in/projects/echobook</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- SafeFlow -->
+  <url>
+    <loc>https://sujalsule.in/projects/safeflow</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Origyn -->
+  <url>
+    <loc>https://sujalsule.in/projects/origyn</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AAROGYA AI -->
+  <url>
+    <loc>https://sujalsule.in/projects/aarogya-ai</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

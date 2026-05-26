@@ -48,7 +48,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             }}
           />
 
-          {/* Logo container */}
+          {/* Logo container — overflow-hidden here clips the shimmer correctly */}
           <motion.div
             initial={{ opacity: 0, scale: 0.6, filter: 'blur(20px)' }}
             animate={
@@ -60,27 +60,23 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             className="relative"
           >
             {/* Glass logo box */}
-            <div className="w-20 h-20 sm:w-24 sm:h-24 liquid-glass-strong rounded-2xl flex items-center justify-center">
-              <span className="font-heading italic text-4xl sm:text-5xl text-white lowercase select-none transform -translate-y-0.5">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 liquid-glass-strong rounded-2xl flex items-center justify-center relative overflow-hidden">
+              <span className="font-heading italic text-4xl sm:text-5xl text-white lowercase select-none transform -translate-y-0.5 relative z-10">
                 ss
               </span>
-            </div>
 
-            {/* Shimmer sweep across the glass */}
-            <motion.div
-              initial={{ x: '-100%' }}
-              animate={phase >= 1 ? { x: '200%' } : {}}
-              transition={{ duration: 1, delay: 0.3, ease: 'easeInOut' }}
-              className="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none"
-            >
-              <div
-                className="h-full w-1/3"
+              {/* Diagonal glass shimmer — clipped by parent overflow-hidden */}
+              <motion.div
+                initial={{ x: '-120%' }}
+                animate={phase >= 1 ? { x: '220%' } : {}}
+                transition={{ duration: 0.9, delay: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  background:
-                    'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
+                  width: '55%',
+                  background: 'linear-gradient(105deg, transparent 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0.06) 70%, transparent 100%)',
                 }}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Expanding line divider */}

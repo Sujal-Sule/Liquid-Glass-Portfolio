@@ -48,3 +48,18 @@ Allow: /
 
 User-agent: PerplexityBot
 Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# LLMs.txt — machine-readable profile for AI answer engines
+# https://sujalsule.in/llms.txt
