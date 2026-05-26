@@ -1,26 +1,70 @@
 # Sujal Sule
 
-> Full-Stack Software Engineer & Creative Developer specializing in high-performance web systems and high-fidelity cinematic UI.
+> MERN Stack Developer, Full-Stack Software Engineer & Hackathon Builder — CS Engineering Student from India specializing in scalable web applications and AI-powered platforms.
 
 ## Profile Summary
-Sujal Sule is a creative software engineer building modern, interactive, and highly scalable digital systems. With deep expertise in frontend architectures (React, Framer Motion, React Three Fiber, WebGL) and full-stack development (TypeScript, Node.js, FastAPI, PostgreSQL), Sujal designs highly functional platforms that combine state-of-the-art aesthetics with technical robustness.
+Sujal Sule is a Full-Stack Developer and Computer Science Engineering student from India. He specializes in building scalable, high-performance web applications using the MERN stack (MongoDB, Express, React, Node.js), TypeScript, Python, FastAPI, and modern frontend frameworks. With hands-on experience from multiple national-level hackathons (including podium finishes) and a portfolio of deployed production applications, Sujal combines strong engineering fundamentals with creative problem-solving. His expertise spans frontend architecture, backend system design, AI/ML integration, real-time WebSocket communication, and blockchain/Web3 development.
 
 ## Primary Domain
-- [Website](https://sujalsule.in/)
+- [Portfolio Website](https://sujalsule.in/)
 
-## Social Profiles
+## Social & Professional Profiles
 - [GitHub](https://github.com/Sujal-Sule)
-- [LinkedIn](https://linkedin.com/in/sujal-sule)
+- [LinkedIn](https://www.linkedin.com/in/sujal-sule/)
+- [Twitter / X](https://x.com/SujalSule_31)
+- [Instagram](https://www.instagram.com/sujal_sule31)
+
+## Contact
+- **Email:** sujalsule31@gmail.com
 
 ## Technical Stack
-- **Languages:** JavaScript, TypeScript, Python, HTML5, CSS3, SQL
-- **Frontend Ecosystem:** React, Next.js, Vite, Tailwind CSS, Framer Motion, React Three Fiber, Three.js
-- **Backend & Cloud:** Node.js, Express, FastAPI, PostgreSQL, MongoDB, Vercel, Hostinger, Git
+- **Languages:** JavaScript (ES6+), TypeScript, Python, HTML5, CSS3, SQL, C/C++
+- **Frontend:** React 19, Next.js, Vite, Tailwind CSS, Framer Motion, Three.js, React Three Fiber, WebGL
+- **Backend:** Node.js, Express.js, FastAPI, RESTful APIs, WebSockets, NodeMailer
+- **Databases:** MongoDB, PostgreSQL, Firebase (Firestore), Supabase
+- **AI/ML:** Google Gemini AI, TensorFlow, OpenCV, RAG Pipelines
+- **Cloud & DevOps:** Vercel, Google Cloud Platform, Render, Git, GitHub
+- **Other:** Web3, Blockchain, Expo React Native, Mapbox GL, Leaflet, Recharts
 
 ## Core Projects
-- **SkillSwap:** Subdomain: [skillswap.sujalsule.in](https://skillswap.sujalsule.in/). A modern collaborative platform for skill assessment and direct knowledge sharing.
-- **Arogya AI:** High-performance diagnosis platform utilizing AI endpoints and robust server-side schemas.
-- **Origyn:** Decentralized web3 authentication and provenance system interface.
 
-## Contact Information
-- **Email:** sujalsule31@gmail.com
+### SkillSwap — AI-Powered Skill Exchange Platform
+- **URL:** [skillswap.sujalsule.in](https://skillswap.sujalsule.in/)
+- **Stack:** React, TypeScript, Vite, FastAPI, Python, MongoDB, Firebase, Gemini AI, WebSockets
+- **Highlights:** Real-time peer-to-peer collaboration, AI-powered matching, WebSocket-based live workspace sync. Won 2nd Runner Up at GDG IIPS DAVV hackathon.
+
+### SafePulse — Smart Crowd Safety System
+- **URL:** [safepulse.teamcodezilla.in](https://safepulse.teamcodezilla.in/)
+- **Stack:** React, TypeScript, Vite, Mapbox GL, Python, Firebase, Supabase
+- **Highlights:** Real-time crowd density mapping, animated gauge dashboards, emergency alerting. Finalist at Project Morpheus (SIT Lonavala).
+
+### EchoBook — Gemini AI Dynamic Storytelling
+- **URL:** [echobook.sujalsule.in](https://echobook.sujalsule.in/)
+- **Stack:** Next.js, React, TypeScript, FastAPI, Python, WebSockets, Firebase, Gemini Live API
+- **Highlights:** Multimodal AI storytelling, real-time voice/text interaction, multi-turn conversation architecture. Built for Google Cloud Gemini Live Agent Challenge.
+
+### SafeFlow — Traffic & Crowd Flow Management
+- **URL:** [safeflow.teamcodezilla.in](https://safeflow.teamcodezilla.in/)
+- **Stack:** React, TypeScript, Vite, Leaflet, Python, FastAPI
+- **Highlights:** Intelligent traffic management, real-time map visualization, urban mobility analytics.
+
+### Origyn — Blockchain Supply Chain Traceability
+- **URL:** [GitHub](https://github.com/Sujal-Sule/Origyn)
+- **Stack:** React, TypeScript, Vite, FastAPI, Python, Expo React Native, WebSockets, Web3
+- **Highlights:** Blockchain provenance tracking, IoT telemetry, dual-client system (web + mobile).
+
+### AAROGYA AI — Preventive Health Ecosystem
+- **URL:** [GitHub](https://github.com/Sujal-Sule/Team_CodeZilla_AAROGYA.AI)
+- **Stack:** React, TypeScript, Vite, FastAPI, Python, Firebase, Google Gemini, TensorFlow, OpenCV
+- **Highlights:** AI-driven medical advice, real-time yoga posture correction with pose estimation, RAG document analysis, fall detection.
+
+## Hackathon Achievements
+1. **Glitch the Grid (GDG IIPS DAVV, 2026):** 2nd Runner Up — SkillSwap
+2. **BGI Hackathon (2026):** First Web3 Build — Origyn
+3. **Project Morpheus (SIT Lonavala, 2026):** Finalist — SafePulse
+4. **Gemini Live Agent Challenge (Google Cloud, 2026):** Participant — EchoBook
+5. **HACKATRON (IIITM Gwalior, 2025):** Participant — AAROGYA AI
+6. **Odoo Hackathon (Gandhinagar, 2025):** Top 200 Nationwide — SkillSwap v1.0
+
+## Availability
+Currently available for hire and open to full-stack development opportunities, hackathon collaborations, freelance projects, and engineering partnerships.

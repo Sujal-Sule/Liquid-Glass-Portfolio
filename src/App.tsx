@@ -434,7 +434,10 @@ export default function App() {
   ];
 
   return (
-    <main className="bg-black text-white selection:bg-white/20">
+    <main className="bg-black text-white selection:bg-white/20" role="main">
+      {/* SEO: Screen-reader-only h1 for proper heading hierarchy */}
+      <h1 className="sr-only">Sujal Sule — MERN Stack Developer, Full-Stack Engineer & Hackathon Builder from India</h1>
+
       {/* Preloader */}
       <Preloader onComplete={handlePreloaderComplete} />
 
@@ -581,7 +584,7 @@ export default function App() {
       </motion.div>
 
       {/* Section 1: Hero */}
-      <section id="portfolio" className="relative h-screen w-full overflow-hidden bg-black flex flex-col pt-24">
+      <section id="portfolio" aria-label="Hero — Sujal Sule Full-Stack Developer" className="relative h-screen w-full overflow-hidden bg-black flex flex-col pt-24">
         <FadingVideo
           src={import.meta.env.VITE_HERO_VIDEO_URL}
           className="z-0"
@@ -646,7 +649,7 @@ export default function App() {
       </section>
 
       {/* Section 2: Expertise */}
-      <section id="expertise" className="relative min-h-screen w-full bg-black flex flex-col overflow-hidden">
+      <section id="expertise" aria-label="Development Expertise — Frontend, Backend & AI" className="relative min-h-screen w-full bg-black flex flex-col overflow-hidden">
         <FadingVideo
           src={import.meta.env.VITE_EXPERTISE_VIDEO_URL}
           className="z-0"
@@ -738,7 +741,7 @@ export default function App() {
       </section>
 
       {/* Section 3: About */}
-      <section id="about" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black overflow-hidden w-full flex justify-center">
+      <section id="about" aria-label="About Sujal Sule" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black overflow-hidden w-full flex justify-center">
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-white/[0.02] to-black" />
         <div className="relative z-10 w-full max-w-6xl">
           <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-center">
@@ -780,7 +783,7 @@ export default function App() {
 
 
       {/* Section 4: Tech Stack */}
-      <section id="stack" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen flex flex-col justify-center overflow-hidden">
+      <section id="stack" aria-label="Technical Stack — Languages, Frameworks, Databases & Tools" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen flex flex-col justify-center overflow-hidden">
         <FadingVideo
           src={import.meta.env.VITE_STACK_VIDEO_URL}
           className="z-0"
@@ -868,7 +871,7 @@ export default function App() {
       </section>
 
       {/* Section 5: Archives */}
-      <section id="archives" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden">
+      <section id="archives" aria-label="Featured Projects — SkillSwap, SafePulse, EchoBook, SafeFlow" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden">
         <FadingVideo
           src={import.meta.env.VITE_PROJECTS_VIDEO_URL}
           className="z-0"
@@ -886,13 +889,14 @@ export default function App() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
             {projects.map((project, i) => (
-              <motion.div 
+              <motion.article 
                 key={project.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className="group"
+                aria-label={`Project: ${project.title}`}
               >
                 <div className="aspect-video liquid-glass rounded-3xl mb-8 overflow-hidden relative group/img cursor-pointer">
                   {project.image && (
@@ -944,14 +948,14 @@ export default function App() {
                     </a>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Section 5.5: Hackathons */}
-      <section id="hackathons" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen flex flex-col justify-center overflow-hidden">
+      <section id="hackathons" aria-label="Hackathon Experience & Competitive Achievements" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen flex flex-col justify-center overflow-hidden">
         <FadingVideo
           src={import.meta.env.VITE_HACKATHONS_VIDEO_URL}
           className="z-0"
@@ -1142,7 +1146,7 @@ export default function App() {
       </section>
 
       {/* Section 6: Contact */}
-      <section id="contact" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden flex flex-col justify-center">
+      <section id="contact" aria-label="Contact Sujal Sule — Get In Touch" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden flex flex-col justify-center">
         <FadingVideo
           src={import.meta.env.VITE_CONTACT_VIDEO_URL}
           className="z-0"
