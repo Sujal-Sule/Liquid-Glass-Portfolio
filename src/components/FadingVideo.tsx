@@ -7,10 +7,8 @@ interface FadingVideoProps {
   maxOpacity?: number;
   fadeTop?: number;
   fadeBottom?: number;
-  /** Controls video preloading. Use 'metadata' for above-fold, 'none' for below-fold. Default: 'none' */
+  /** Controls video preloading. Use 'auto' for above-fold hero, 'none' for below-fold. Default: 'none' */
   preload?: 'none' | 'metadata' | 'auto';
-  /** Hint browser this is high priority (above-fold hero). Default: false */
-  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
 const FADE_MS = 1000;
@@ -23,7 +21,6 @@ export default function FadingVideo({
   fadeTop = 0,
   fadeBottom = 0,
   preload = 'none',
-  fetchPriority = 'auto',
 }: FadingVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -158,7 +155,6 @@ export default function FadingVideo({
         playsInline
         loop
         preload={preload}
-        fetchPriority={fetchPriority}
       />
 
       {/* Top edge fade: black → transparent */}
