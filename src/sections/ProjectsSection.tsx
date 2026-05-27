@@ -23,14 +23,14 @@ const compactProjects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="archives" aria-label="Featured Projects" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden">
+    <section id="archives" aria-label="Featured Projects" className="relative py-16 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black min-h-screen overflow-hidden">
       <FadingVideo src={import.meta.env.VITE_PROJECTS_VIDEO_URL} className="z-0" style={{ objectPosition: "center 94%", transform: "scale(1.15)" }} maxOpacity={0.28} fadeTop={22} fadeBottom={22} />
       <div className="relative z-10 container mx-auto">
-        <span className="text-sm font-body text-white/40 mb-6 block tracking-widest uppercase">// ARCHIVES</span>
-        <h2 className="font-heading italic text-white text-4xl sm:text-5xl md:text-6xl tracking-[-2px] mb-12 sm:mb-16">Featured Projects</h2>
+        <span className="text-sm font-body text-white/40 mb-4 sm:mb-6 block tracking-widest uppercase">// ARCHIVES</span>
+        <h2 className="font-heading italic text-white text-4xl sm:text-5xl md:text-6xl tracking-[-2px] mb-8 sm:mb-16">Featured Projects</h2>
 
         {/* Primary 4 projects with images — 2x2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-x-8 sm:gap-y-8 mb-12 sm:mb-20">
           {featuredProjects.map((project, i) => (
             <motion.article
               key={project.id}
@@ -44,9 +44,9 @@ export default function ProjectsSection() {
               {/* Unified glass card */}
               <div className="liquid-glass rounded-2xl border border-white/5 hover:border-white/10 transition-all duration-500 overflow-hidden flex flex-col">
 
-                {/* Image section with arrow hover overlay */}
+                {/* Image section — compact on mobile */}
                 <Link to={`/projects/${project.slug}`} className="block">
-                  <div className="aspect-[16/10] relative overflow-hidden cursor-pointer">
+                  <div className="aspect-[16/9] sm:aspect-[16/10] relative overflow-hidden cursor-pointer">
                     {project.image && (
                       <motion.img
                         src={project.image}
@@ -68,29 +68,29 @@ export default function ProjectsSection() {
                   </div>
                 </Link>
 
-                {/* Glass info panel */}
-                <Link to={`/projects/${project.slug}`} className="block p-6 sm:p-7 flex-1">
+                {/* Glass info panel — compact on mobile */}
+                <Link to={`/projects/${project.slug}`} className="block p-4 sm:p-7 flex-1">
                   {/* ID & Year row */}
-                  <div className="flex justify-between items-center mb-3">
+                  <div className="flex justify-between items-center mb-2 sm:mb-3">
                     <span className="text-[10px] text-white/40 uppercase tracking-widest font-mono">{project.id}</span>
                     <span className="text-xs font-body text-white/30 italic">{project.year}</span>
                   </div>
 
                   {/* Title */}
-                  <h4 className="font-heading italic text-2xl sm:text-3xl text-white mb-2 group-hover:text-white/90 transition-colors">{project.title}</h4>
+                  <h4 className="font-heading italic text-xl sm:text-3xl text-white mb-1.5 sm:mb-2 group-hover:text-white/90 transition-colors">{project.title}</h4>
 
-                  {/* Description */}
-                  <p className="text-sm text-white/50 font-body font-light leading-relaxed mb-5">{project.description}</p>
+                  {/* Description — truncated on mobile */}
+                  <p className="text-xs sm:text-sm text-white/50 font-body font-light leading-relaxed mb-3 sm:mb-5 line-clamp-2 sm:line-clamp-none">{project.description}</p>
 
                   {/* Tech pills */}
-                  <div className="flex flex-wrap gap-2 mb-5">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-5">
                     {project.tech.map(t => (
-                      <span key={t} className="liquid-glass rounded-full px-3 py-1 text-[10px] text-white/70 font-body border border-white/5">{t}</span>
+                      <span key={t} className="liquid-glass rounded-full px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] text-white/70 font-body border border-white/5">{t}</span>
                     ))}
                   </div>
 
                   {/* Action links */}
-                  <div className="flex items-center gap-5 pt-4 border-t border-white/[0.06]">
+                  <div className="flex items-center gap-3 sm:gap-5 pt-3 sm:pt-4 border-t border-white/[0.06]">
                     <span className="text-[10px] uppercase tracking-widest text-white/80 flex items-center gap-1.5 font-medium">
                       View Details <ArrowUpRight className="w-3 h-3" />
                     </span>
@@ -116,17 +116,17 @@ export default function ProjectsSection() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/5 mb-16" />
+        <div className="border-t border-white/5 mb-8 sm:mb-16" />
 
         {/* Additional projects — compact card style with stagger reveal */}
-        <div className="mb-6 flex items-center gap-3">
-          <div className="w-10 h-10 liquid-glass rounded-xl flex items-center justify-center">
-            <Code2 className="w-5 h-5 text-white/60" />
+        <div className="mb-4 sm:mb-6 flex items-center gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 liquid-glass rounded-xl flex items-center justify-center">
+            <Code2 className="w-4 h-4 sm:w-5 sm:h-5 text-white/60" />
           </div>
           <h3 className="text-xs uppercase tracking-widest text-white/40 font-body">More Builds</h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {compactProjects.map((project, i) => (
             <motion.article
               key={project.id}
@@ -141,7 +141,7 @@ export default function ProjectsSection() {
 
                 {/* Image with GitHub hover overlay */}
                 {project.image && (
-                  <div className="aspect-[16/9] relative overflow-hidden cursor-pointer" onClick={() => window.open(project.github, '_blank')}>
+                  <div className="aspect-[16/10] sm:aspect-[16/9] relative overflow-hidden cursor-pointer" onClick={() => window.open(project.github, '_blank')}>
                     <motion.img
                       src={project.image}
                       alt={project.title}
@@ -161,26 +161,26 @@ export default function ProjectsSection() {
                   </div>
                 )}
 
-                {/* Card content */}
-                <Link to={`/projects/${project.slug}`} className="block p-6 sm:p-8 flex-1">
-                  <div className="flex justify-between items-start mb-4">
+                {/* Card content — compact on mobile */}
+                <Link to={`/projects/${project.slug}`} className="block p-4 sm:p-8 flex-1">
+                  <div className="flex justify-between items-start mb-3 sm:mb-4">
                     <span className="text-[10px] text-white/40 uppercase tracking-widest font-mono">{project.id}</span>
                     <span className="text-xs font-body text-white/30 italic">{project.year}</span>
                   </div>
 
-                  <h4 className="font-heading italic text-2xl sm:text-3xl text-white mb-1 group-hover:text-white/90 transition-colors">{project.title}</h4>
-                  <p className="text-xs text-white/50 font-body mb-4 italic">{project.tagline}</p>
-                  <p className="text-sm text-white/50 font-body font-light leading-relaxed mb-6">{project.description}</p>
+                  <h4 className="font-heading italic text-xl sm:text-3xl text-white mb-1 group-hover:text-white/90 transition-colors">{project.title}</h4>
+                  <p className="text-[10px] sm:text-xs text-white/50 font-body mb-3 sm:mb-4 italic">{project.tagline}</p>
+                  <p className="text-xs sm:text-sm text-white/50 font-body font-light leading-relaxed mb-4 sm:mb-6 line-clamp-2 sm:line-clamp-none">{project.description}</p>
 
                   {/* Tech pills */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
                     {project.tech.map(t => (
-                      <span key={t} className="liquid-glass rounded-full px-3 py-1 text-[10px] text-white/70 font-body">{t}</span>
+                      <span key={t} className="liquid-glass rounded-full px-2 sm:px-3 py-0.5 sm:py-1 text-[9px] sm:text-[10px] text-white/70 font-body">{t}</span>
                     ))}
                   </div>
 
                   {/* Action links */}
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-center gap-4 sm:gap-5">
                     <span className="text-[10px] uppercase tracking-widest text-white/80 flex items-center gap-1.5 font-medium">
                       View Details <ArrowUpRight className="w-3 h-3" />
                     </span>
