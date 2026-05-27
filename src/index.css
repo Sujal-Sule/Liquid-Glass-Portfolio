@@ -126,3 +126,12 @@ body::-webkit-scrollbar-button {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Utility: hide scrollbar for horizontal carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
