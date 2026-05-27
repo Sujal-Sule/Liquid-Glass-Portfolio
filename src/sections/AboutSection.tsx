@@ -2,12 +2,12 @@ import FadingVideo from '../components/FadingVideo';
 
 export default function AboutSection() {
   return (
-    <section id="about" aria-label="About Sujal Sule" className="relative py-20 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black overflow-hidden w-full flex justify-center">
+    <section id="about" aria-label="About Sujal Sule" className="relative py-14 sm:py-32 px-6 sm:px-8 md:px-16 lg:px-20 bg-black overflow-hidden w-full flex justify-center">
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-white/[0.02] to-black" />
       <div className="relative z-10 w-full max-w-6xl">
-        <div className="flex flex-col md:flex-row gap-16 lg:gap-24 items-center">
+        <div className="flex flex-col md:flex-row gap-10 sm:gap-16 lg:gap-24 items-center">
           {/* Video Container (Portrait Dimensions) */}
-          <div className="relative w-full md:w-5/12 aspect-[3/4] sm:aspect-[9/16] max-w-xs sm:max-w-md mx-auto md:mx-0 liquid-glass rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden group flex-shrink-0">
+          <div className="relative w-full md:w-5/12 aspect-[4/5] sm:aspect-[3/4] max-w-[260px] sm:max-w-md mx-auto md:mx-0 liquid-glass rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden group flex-shrink-0">
             <div className="absolute inset-2 md:inset-4 rounded-[2rem] overflow-hidden bg-black">
               <FadingVideo
                 src={import.meta.env.VITE_ABOUT_VIDEO_URL}
