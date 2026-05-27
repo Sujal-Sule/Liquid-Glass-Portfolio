@@ -40,6 +40,12 @@ export default function ProjectsSection() {
     if (!el || !isMobile) return;
     const handleScroll = () => {
       const scrollLeft = el.scrollLeft;
+      const maxScroll = el.scrollWidth - el.offsetWidth;
+      // If near the end of scroll, it must be the last card
+      if (maxScroll > 0 && scrollLeft >= maxScroll - 10) {
+        setActiveIndex(featuredProjects.length - 1);
+        return;
+      }
       const cardWidth = el.offsetWidth * 0.82;
       const gap = 16;
       const index = Math.round(scrollLeft / (cardWidth + gap));
