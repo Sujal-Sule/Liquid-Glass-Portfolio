@@ -2,6 +2,10 @@
 User-agent: *
 Allow: /
 
+# Block Google Video Bot from indexing decorative background videos
+User-agent: Googlebot-Video
+Disallow: /
+
 # Sitemap
 Sitemap: https://sujalsule.in/sitemap.xml
 
