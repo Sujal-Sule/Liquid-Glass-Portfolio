@@ -79,10 +79,65 @@ async function startServer() {
 
     try {
       const mailOptions = {
-        from: `"${name}" <${currentGmailUser}>`, // Must be from the gmail user for Gmail SMTP
-        to: currentGmailUser, // Sending to yourself
+        from: `"${name}" <${currentGmailUser}>`,
+        to: currentGmailUser,
         subject: `🚀 New Portfolio Message from ${name}`,
         text: `You have a new message from your portfolio website.\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+        html: `
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>New Portfolio Message</title>
+          </head>
+          <body style="margin: 0; padding: 0; background-color: #050505; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #ffffff;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #050505; padding: 40px 20px;">
+              <tr>
+                <td align="center">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" style="background-color: #0d0d0d; border: 1px solid #222222; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);">
+                    <tr>
+                      <td style="background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%); padding: 30px; border-bottom: 1px solid #222222; text-align: center;">
+                        <h1 style="margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff;">Sujal Sule</h1>
+                        <p style="margin: 5px 0 0 0; font-size: 14px; color: #888888; text-transform: uppercase; letter-spacing: 2px;">Liquid Glass Portfolio</p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 40px 30px;">
+                        <h2 style="margin-top: 0; margin-bottom: 20px; font-size: 20px; font-weight: 600; color: #ffffff;">New Message Received</h2>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+                          <tr>
+                            <td width="120" style="padding: 10px 0; font-size: 14px; font-weight: 600; color: #888888; border-bottom: 1px solid #1a1a1a;">Sender Name</td>
+                            <td style="padding: 10px 0 10px 10px; font-size: 14px; color: #ffffff; border-bottom: 1px solid #1a1a1a;">${name}</td>
+                          </tr>
+                          <tr>
+                            <td width="120" style="padding: 10px 0; font-size: 14px; font-weight: 600; color: #888888; border-bottom: 1px solid #1a1a1a;">Email Address</td>
+                            <td style="padding: 10px 0 10px 10px; font-size: 14px; color: #3b82f6; border-bottom: 1px solid #1a1a1a;">
+                              <a href="mailto:${email}" style="color: #3b82f6; text-decoration: none;">${email}</a>
+                            </td>
+                          </tr>
+                        </table>
+                        <div style="background-color: #121212; border: 1px solid #222222; border-radius: 12px; padding: 24px; margin-top: 20px;">
+                          <p style="margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #888888; font-weight: 600;">Message</p>
+                          <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #e5e5e5; white-space: pre-wrap;">${message}</p>
+                        </div>
+                        <div style="margin-top: 30px; text-align: center;">
+                          <a href="mailto:${email}" style="display: inline-block; background-color: #ffffff; color: #000000; font-weight: 600; font-size: 14px; padding: 12px 24px; border-radius: 30px; text-decoration: none;">Reply Direct</a>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="background-color: #080808; padding: 20px 30px; border-top: 1px solid #1a1a1a; text-align: center; font-size: 12px; color: #555555;">
+                        <p style="margin: 0 0 5px 0;">This email was sent automatically from your portfolio site: sujalsule.in</p>
+                        <p style="margin: 0;">&copy; 2026 Sujal Sule. All rights reserved.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </body>
+          </html>
+        `,
         replyTo: email,
       };
 

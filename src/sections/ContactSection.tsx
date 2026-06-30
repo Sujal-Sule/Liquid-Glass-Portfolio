@@ -9,7 +9,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setStatus('idle');
+    setStatus('loading');
     setErrorMessage('');
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus('error');
@@ -22,26 +22,28 @@ export default function ContactSection() {
       setErrorMessage('Please enter a valid email address.');
       return;
     }
-    const submissionData = { ...formData };
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setStatus('idle'), 5000);
     fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(submissionData),
+      body: JSON.stringify(formData),
     })
       .then(async (response) => {
-        if (!response.ok) {
-          const contentType = response.headers.get("content-type");
-          let errorData;
-          if (contentType && contentType.includes("application/json")) errorData = await response.json();
-          console.warn("[Background Contact Form] Send warning:", errorData?.error || response.statusText);
-        } else {
-          console.log("[Background Contact Form] Message sent successfully in background.");
+        const contentType = response.headers.get("content-type");
+        let responseData;
+        if (contentType && contentType.includes("application/json")) {
+          responseData = await response.json();
         }
+        if (!response.ok) {
+          throw new Error(responseData?.error || response.statusText || 'Failed to send message.');
+        }
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
       })
-      .catch((error) => console.error("[Background Contact Form] Background network error:", error));
+      .catch((error) => {
+        setStatus('error');
+        setErrorMessage(error.message || 'Network error. Please try again later.');
+      });
   };
 
   return (
